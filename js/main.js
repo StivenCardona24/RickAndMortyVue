@@ -2,14 +2,19 @@ var app = new Vue({
   el: "#app",
   data: {
     users: [
-      {id: 1, name: 'test1', username: 'user1', PIN: '1234', token: false, status: 'user'},
-      {id: 2, name: 'test2', username: 'user2', PIN: '1234', token: false, status: 'user'}
-      {id: 3, name: 'test3', username: 'user3', PIN: '1234', token: false, status: 'user'},
+      {id: 1, name: 'test1', username: 'user1', PIN: '1234', rmp: 1000, characters:[]},
+      {id: 2, name: 'test2', username: 'user2', PIN: '1234', rmp: 3000, Characters:[]},
+      {id: 3, name: 'test3', username: 'user3', PIN: '1234', rmp: 5000, Characters:[]},
   ],
+  
   newArrUsers: [],
   username:"",
   PIN:"",
   user:"",
+  person:{
+    name:"",
+
+  },
 },
 
 
@@ -25,7 +30,7 @@ var app = new Vue({
 
       
  this.users.forEach(persona => {   // recorrer todos los objetos
-    if(this.username == persona && this.PIN == persona){
+    if(this.username == persona.username && this.PIN == persona.PIN){
         alert("¡Bienvenido!");
         this.user = persona;
         this.saveUser();
@@ -33,7 +38,7 @@ var app = new Vue({
     }
 
  });
- if(this.users==""){
+ if(this.user==""){
     alert("Los datos son incorrectos");
  }
 }
@@ -51,7 +56,7 @@ updateLocalStorage() {// actualizar
   localStorage.setItem('users', JSON.stringify(this.users));
 },
 saveUser(){
-  localStorage.setItem('users', JSON.stringify(this.users));
+  localStorage.setItem('user', JSON.stringify(this.user));
 }
 }
 });

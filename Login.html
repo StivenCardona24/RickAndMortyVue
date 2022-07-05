@@ -26,12 +26,12 @@
               <h1 class="mb-3">Iniciar Sesión</h1>
               <div class="form-floating mb-3">
                 <span>Usuario:</span>
-                <input type="text" name="email" id="email" class="form-control" v-model="email">
+                <input type="text" name="email" id="email" class="form-control" v-model="username">
                 
               </div>
               <div class="form-floating mb-3">
                 <span>PIN</span>
-                <input @keyup.enter="login" type="password" name="password" id="password" class="form-control" v-model="password">
+                <input @keyup.enter="login" type="password" name="password" id="password" class="form-control" v-model="PIN">
               </div>
               <button type="submit" class="btn btn-primary" @click="login">Ingresar</button>
               <div>
