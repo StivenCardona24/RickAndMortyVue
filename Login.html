@@ -25,15 +25,15 @@
                 <img src="Images/logologin.png" alt="">
                 <h1 class="mb-3">Iniciar Sesión</h1>
                 <div class="form-floating mb-3">
-                  <span>Usuario:</span>
-                  <input type="text" name="email" id="email" class="form-control" v-model="username">
-                
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="username">
+                  <label for="floatingInput">Usuario</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                  <span>PIN</span>
-                  <input @keyup.enter="login" type="password" name="password" id="password" class="form-control" v-model="PIN">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="pin" >
+                  <label for="floatingInput">Pin</label>
                 </div>
+               
                 <div class="mb-3">
                   <button type="submit" class="btn btn-primary" @click="login">Ingresar</button>
                 </div>
@@ -58,29 +58,27 @@
             <img src="Images/logologin.png" alt="">
             <h1 class="mb-3">Crear cuenta</h1>
             <div class="form-floating mb-3">
-              <span>Nombre</span>
-              <input type="text" name="email" id="email" class="form-control" >
+              <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="person.name" >
+              <label for="floatingInput">Nombre: </label>
             </div>
             <div class="form-floating mb-3">
-              <span>Usuario</span>
-              <input type="text" name="email" id="email" class="form-control" >
+              <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="person.username" >
+              <label for="floatingInput">Usuario: </label>
             </div>
             <div class="form-floating mb-3">
-              <span>Pin</span>
-              <input type="text" name="email" id="email" class="form-control" >
+              <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="person.pin" >
+              <label for="floatingInput">Pin: </label>
             </div>
             <div class="form-floating mb-3">
-              <span>Confirmar PIN</span>
-              <input @keyup.enter="login" type="password" name="password" id="password" class="form-control" v-model="password">
+              <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="person.pin2" >
+              <label for="floatingInput">Confirmar Pin: </label>
             </div>
             <div >
-              <button type="submit" class="btn btn-primary" @click="saveUser">Registrar</button>
+              <button type="submit" class="btn btn-primary" @click="registerUser">Registrar</button>
             </div>
-            <div style="margin-top: 15px;" >  
-              <button type="submit" class="btn btn-primary" @click="login"> Comprar </button>
-            </div>
+            
             <div style="margin-top: 15px;">
-              <span><a href="#app">¿Ya tienes cuenta? Inicia secion</a> </span>
+              <span><a href="#app" @click="openLogin">¿Ya tienes cuenta? Inicia sesión</a> </span>
             </div>
           </div>
  
